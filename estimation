@@ -1,0 +1,54 @@
+using System;
+class StudentGrader
+{
+    static void Main()
+    {
+        Console.WriteLine("=== Оценка студента ===");
+        
+        Console.Write("Введите имя студента: ");
+        string studentName = Console.ReadLine();
+        
+        Console.Write("Введите оценку по математике (1-5): ");
+        int mathGrade = Convert.ToInt32(Console.ReadLine());
+        
+        Console.Write("Введите оценку по языку (1-5): ");
+        int languageGrade = Convert.ToInt32(Console.ReadLine());
+        
+        Console.Write("Введите оценку по программированию (1-5): ");
+        int programmingGrade = Convert.ToInt32(Console.ReadLine());
+      
+        double averageGrade = (mathGrade + languageGrade + programmingGrade) / 3.0;
+        
+        Console.WriteLine($"\nРезультаты для {studentName}:");
+        Console.WriteLine($"Математика: {mathGrade}");
+        Console.WriteLine($"Язык: {languageGrade}");
+        Console.WriteLine($"Программирование: {programmingGrade}");
+        Console.WriteLine($"Средний балл: {averageGrade:F2}");
+        
+        if (averageGrade >= 4.5)
+        {
+            Console.WriteLine("Отличник! ");
+        }
+        else if (averageGrade >= 3.5)
+        {
+            Console.WriteLine("Хорошист! ");
+        }
+        else if (averageGrade >= 2.5)
+        {
+            Console.WriteLine("Удовлетворительно ");
+        }
+        else
+        {
+            Console.WriteLine("Нужно подтянуть знания! ");
+        }
+      
+        if (mathGrade > 3 && languageGrade > 3 && programmingGrade > 3)
+        {
+            Console.WriteLine("Студент сохраняет стипендию! ");
+        }
+        else
+        {
+            Console.WriteLine("Стипендия под угрозой! ");
+        }
+    }
+}
